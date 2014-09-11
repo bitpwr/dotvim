@@ -1,3 +1,6 @@
+execute pathogen#infect()
+execute pathogen#helptags()
+
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
@@ -24,6 +27,7 @@ set nobackup
 set incsearch
 
 syntax on
+
 colo evening
 
 " open file explorere with F2
