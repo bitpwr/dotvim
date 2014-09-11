@@ -28,7 +28,7 @@ set incsearch
 
 syntax on
 set background=dark 
-colo solarized
+colo gruvbox
 "colo evening
 
 " open file explorere with F2
