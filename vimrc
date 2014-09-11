@@ -27,8 +27,9 @@ set nobackup
 set incsearch
 
 syntax on
-
-colo evening
+set background=dark 
+colo solarized
+"colo evening
 
 " open file explorere with F2
 map <F2> :Ve <CR>
