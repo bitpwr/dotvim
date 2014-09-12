@@ -1,7 +1,10 @@
+" init pathogen
 execute pathogen#infect()
 execute pathogen#helptags()
 
 filetype plugin indent on
+syntax on
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -24,16 +27,15 @@ set wildmenu
 set smartindent
 set smarttab
 set nobackup
-set incsearch
+"set incsearch
 
-syntax on
+" colorscheme
 set background=dark 
+"set t_Co=16
 colo gruvbox
-"colo evening
 
-" open file explorere with F2
-map <F2> :Ve <CR>
-imap <F2> <ESC> :Ve <CR>
+" General key mappings
+"""""""""""""""""""""""""""""""""""""""""""
 
 " move within wrapped lines
 map <DOWN> gj
@@ -51,10 +53,20 @@ map <A-LEFT> :bp<CR>
 imap <A-RIGHT> <ESC>:bn<CR>
 imap <A-LEFT> <ESC>:bp<CR>
 
-" close buffers
-"map <C-w> :bd<CR>
-
 " scroll screen up/down
 map <C-DOWN> <C-e>
 map <C-UP> <C-y>
+
+" Plugin settings
+"""""""""""""""""""""""""""""""""""""""""""
+
+" NERD tree
+map <F2> :NERDTreeToggle<CR>
+imap <F2> <ESC> :NERDTreeToggle<CR>
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" NERD Commenter
+map <F7> :call NERDComment(1, 'toggle')<CR><CR>
+imap <F7> <ESC> :call NERDComment(1, 'toggle')<CR><CR>
 
