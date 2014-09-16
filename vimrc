@@ -5,34 +5,65 @@ execute pathogen#helptags()
 filetype plugin indent on
 syntax on
 
+" general editor settings
+""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=4
 set shiftwidth=4
 set expandtab
-"set cindent
-set hid
-set ignorecase
-set smartcase       " case sensitive for upper case
-set number
-set autochdir
-set ls=2
-set hlsearch
-"set scrolloff=2
-set showmatch
-set matchtime=2
-set matchpairs+=<:>
-set showmode
-set showcmd
-set ruler
-set wildmenu
 set smartindent
 set smarttab
-set nobackup
+set wildmenu    " command line completion
+set wildignore=*.o,*~,*.pyc     " Ignore compiled files
+set so=5        " scroll offset
+set ruler       " show current position
+set number      " line numbers
+set hid         " do not close hidden buffers
+set nocompatible
+set nobackup    " no backcup files
+set ls=2        " show status bar even for single files
+
+" searching
+set ignorecase
+set smartcase       " case sensitive for upper case when searching
+set hlsearch        " highlight previous pattern
 "set incsearch
 
-" colorscheme
+" programming
+set showmatch       " jump to matchin bracket
+set matchtime=2
+set matchpairs+=<:> " add <> as mathing pairs
+
+" show all characters, set list/nolist
+set lcs=eol:$
+set lcs+=tab:»·
+set lcs+=trail:·
+set lcs+=nbsp:%
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" To be removed?
+set autochdir       " change current dir to same as current file - obsolete
+
+
+" colors
+"""""""""""""""""""""""""""""""""""""""""""
 set background=dark 
-"set t_Co=16
 colo gruvbox
+
+if has("gui_running")
+    set guioptions-=T
+    set guioptions+=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+else
+    set t_Co=16
+endif
+
+set encoding=utf8
 
 " General key mappings
 """""""""""""""""""""""""""""""""""""""""""
@@ -67,6 +98,6 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " NERD Commenter
-map <F7> :call NERDComment(1, 'toggle')<CR><CR>
-imap <F7> <ESC> :call NERDComment(1, 'toggle')<CR><CR>
+map <F7> :call NERDComment(1, 'toggle')<CR>
+imap <F7> <ESC> :call NERDComment(1, 'toggle')<CR>
 
