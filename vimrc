@@ -70,9 +70,9 @@ set encoding=utf8
 
 " move within wrapped lines
 map <DOWN> gj
-imap <DOWN> <ESC>gji
+"imap <DOWN> <ESC>gji
 map <UP> gk
-imap <UP> <ESC>gki
+"imap <UP> <ESC>gki
 
 " jump between words
 map <C-RIGHT> <S-RIGHT>
