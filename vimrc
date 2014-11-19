@@ -101,3 +101,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 map <F7> :call NERDComment(1, 'toggle')<CR>
 imap <F7> <ESC> :call NERDComment(1, 'toggle')<CR>
 
+" Bbye - buffer delete
+:noremap <C-q> :Bdelete<CR>
+
