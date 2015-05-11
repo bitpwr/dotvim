@@ -21,6 +21,7 @@ set hid         " do not close hidden buffers
 set nocompatible
 set nobackup    " no backcup files
 set ls=2        " show status bar even for single files
+set noswapfile  " no .swp files created
 
 " searching
 set ignorecase
