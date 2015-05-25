@@ -22,6 +22,7 @@ set nocompatible
 set nobackup    " no backcup files
 set ls=2        " show status bar even for single files
 set noswapfile  " no .swp files created
+set backspace=2
 
 " searching
 set ignorecase
@@ -53,7 +54,6 @@ set autochdir       " change current dir to same as current file - obsolete
 " colors
 """""""""""""""""""""""""""""""""""""""""""
 set background=dark 
-colo gruvbox
 
 if has("gui_running")
     set guioptions-=T
@@ -61,9 +61,12 @@ if has("gui_running")
     set t_Co=256
     set guitablabel=%M\ %t
 else
-    set t_Co=16
+    let g:gruvbox_italic=0
+    "set t_Co=16
+    set t_Co=256
 endif
 
+colo gruvbox
 set encoding=utf8
 
 " General key mappings
@@ -84,6 +87,10 @@ map <A-RIGHT> :bn<CR>
 map <A-LEFT> :bp<CR>
 imap <A-RIGHT> <ESC>:bn<CR>
 imap <A-LEFT> <ESC>:bp<CR>
+map <F6> :bn<CR>
+map <F5> :bp<CR>
+imap <F6> <ESC>:bn<CR>
+imap <F5> <ESC>:bp<CR>
 
 " scroll screen up/down
 map <C-DOWN> <C-e>
