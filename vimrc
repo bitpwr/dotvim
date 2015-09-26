@@ -1,8 +1,43 @@
-" init pathogen
-execute pathogen#infect()
-execute pathogen#helptags()
+" Setting up NeoBundle - the vim plugin bundler
+set nocompatible               " Be iMproved
+
+" NeoBundle check and auto install
+let iCanHazNeoBundle=1
+let NeoBundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
+if !filereadable(NeoBundle_readme)
+    echo "Installing NeoBundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    let iCanHazNeoBundle=0
+endif
+
+" init neobundle
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" plugins using NeoBundle goes here
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'altercation/vim-colors-solarized.git'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'moll/vim-bbye'
+NeoBundle 'peterhoeg/vim-qml'
+
+call neobundle#end()
 
 filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
 syntax on
 
 " general editor settings
@@ -95,6 +130,9 @@ imap <F5> <ESC>:bp<CR>
 " scroll screen up/down
 map <C-DOWN> <C-e>
 map <C-UP> <C-y>
+
+" to avoid removing indent when typing #
+:inoremap # X<BS>#
 
 " Plugin settings
 """""""""""""""""""""""""""""""""""""""""""
