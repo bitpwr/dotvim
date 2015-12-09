@@ -29,6 +29,7 @@ NeoBundle 'altercation/vim-colors-solarized.git'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'moll/vim-bbye'
 NeoBundle 'peterhoeg/vim-qml'
+NeoBundle 'jiangmiao/auto-pairs'
 
 call neobundle#end()
 
@@ -82,6 +83,8 @@ set novisualbell
 set t_vb=
 set tm=500
 
+set showcmd         "to show when <leader> waiting for command
+
 " To be removed?
 set autochdir       " change current dir to same as current file - obsolete
 
@@ -106,6 +109,8 @@ set encoding=utf8
 
 " General key mappings
 """""""""""""""""""""""""""""""""""""""""""
+" set <leader>
+let mapleader="\<space>"
 
 " move within wrapped lines
 map <DOWN> gj
