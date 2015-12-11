@@ -30,6 +30,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'moll/vim-bbye'
 NeoBundle 'peterhoeg/vim-qml'
 NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'bling/vim-airline'
 
 call neobundle#end()
 
@@ -155,3 +156,5 @@ imap <F7> <ESC> :call NERDComment(1, 'toggle')<CR>
 " Bbye - buffer delete
 map <F4> :Bdelete<CR>
 
+" airline
+let g:airline#extensions#tabline#enabled = 1
