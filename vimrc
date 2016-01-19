@@ -32,6 +32,7 @@ NeoBundle 'peterhoeg/vim-qml'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 call neobundle#end()
 
@@ -159,8 +160,10 @@ map <F4> :Bdelete<CR>
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
+" Just show the filename (no path) in the tab
+let g:airline#extensions#tabline#fnamemod = ':t'
 
-" The Silver Searcher/CtrlP
+" CtrlP
 if executable('ag')
     " Use ag over grep
     set grepprg=ag\ --nogroup\ --nocolor
@@ -170,5 +173,13 @@ if executable('ag')
 
     " ag is fast enough that CtrlP doesn't need to cache
      let g:ctrlp_use_caching = 0
- endif
+endif
+
+map <leader>b :CtrlPBuffer <CR>
+map <leader>m :CtrlPMRU <CR>
+
+"Indent-guides
+let g:indent_guides_default_mapping = 0
+nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
 
