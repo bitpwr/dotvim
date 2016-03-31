@@ -79,6 +79,7 @@ set lcs=eol:$
 set lcs+=tab:»·
 set lcs+=trail:·
 set lcs+=nbsp:%
+set lcs+=space:.
 
 " No annoying sound on errors
 set noerrorbells
@@ -139,6 +140,8 @@ imap <F5> <ESC>:bp<CR>
 map <C-DOWN> <C-e>
 map <C-UP> <C-y>
 
+nnoremap <LEADER>w :set list!<CR>
+
 " to avoid removing indent when typing #
 :inoremap # X<BS>#
 
@@ -174,6 +177,8 @@ if executable('ag')
     " ag is fast enough that CtrlP doesn't need to cache
      let g:ctrlp_use_caching = 0
 endif
+
+let g:ctrlp_open_multiple_files = '1vjr'
 
 map <leader>b :CtrlPBuffer <CR>
 map <leader>m :CtrlPMRU <CR>
