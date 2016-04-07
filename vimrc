@@ -79,7 +79,6 @@ set lcs=eol:$
 set lcs+=tab:»·
 set lcs+=trail:·
 set lcs+=nbsp:%
-set lcs+=space:.
 
 " No annoying sound on errors
 set noerrorbells
