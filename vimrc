@@ -33,6 +33,7 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'mileszs/ack.vim'
 
 call neobundle#end()
 
@@ -182,8 +183,17 @@ let g:ctrlp_open_multiple_files = '1vjr'
 map <leader>b :CtrlPBuffer <CR>
 map <leader>m :CtrlPMRU <CR>
 
-"Indent-guides
+" Indent-guides
 let g:indent_guides_default_mapping = 0
 nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+" Ack
+if executable('ag')
+     " use ag over ack
+     let g:ackprg = 'ag --vimgrep'
+endif
+
+cnoreabbrev Ack Ack!
+nnoremap <leader>f :Ack!<SPACE>
 
 
