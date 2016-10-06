@@ -34,7 +34,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'mileszs/ack.vim'
-
+NeoBundle 'w0ng/vim-hybrid'
 call neobundle#end()
 
 filetype plugin indent on
@@ -95,7 +95,7 @@ set autochdir       " change current dir to same as current file - obsolete
 
 " colors
 """""""""""""""""""""""""""""""""""""""""""
-set background=dark 
+set background=dark
 
 if has("gui_running")
     set guioptions-=T
@@ -108,7 +108,8 @@ else
     set t_Co=256
 endif
 
-colo gruvbox
+"colo gruvbox
+colo hybrid
 set encoding=utf8
 
 " General key mappings
@@ -140,6 +141,7 @@ imap <F5> <ESC>:bp<CR>
 map <C-DOWN> <C-e>
 map <C-UP> <C-y>
 
+" show whitspace
 nnoremap <LEADER>w :set list!<CR>
 
 " to avoid removing indent when typing #
