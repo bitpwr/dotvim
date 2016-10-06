@@ -35,6 +35,7 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'kana/vim-altr'
 call neobundle#end()
 
 filetype plugin indent on
@@ -198,4 +199,7 @@ endif
 cnoreabbrev Ack Ack!
 nnoremap <leader>f :Ack!<SPACE>
 
+" Altr - open corresponding file (header/source)
+nmap <Leader>h <Plug>(altr-forward)
+nmap <Leader>g <Plug>(altr-back)
 
